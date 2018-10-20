@@ -12,36 +12,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.proyecto.proyecto.entity.Tipo_curso;
-import com.proyecto.proyecto.services.Tipo_cursoService;
+import com.proyecto.proyecto.entity.fn_sum_course;
+
+import com.proyecto.proyecto.services.Fn_sum_courseService;
 
 @RestController
-@RequestMapping("/tipocurso")
-public class TipoCursoController {
-	
+@RequestMapping("/tabla")
+public class Fn_sum_courseController {
 	@Autowired
-	private Tipo_cursoService service;
-	
-	@RequestMapping(value="/listar", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Tipo_curso>>getProfesores(){
+	private Fn_sum_courseService service;
 		
-		List<Tipo_curso> list = null;
+	@RequestMapping(value="/listar", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<fn_sum_course>> getTabla(){
+		
+		
+		
+		List<fn_sum_course> list = null;
 
 		try {
 			
-			list = service.getTipo_Cursos();
+			list = service.getTabla();
 			
 			if (list == null) {
-				list = new ArrayList<Tipo_curso>();
+				list = new ArrayList<fn_sum_course>();
 			}
 		} catch (Exception e) {
 
-			return new ResponseEntity<List<Tipo_curso>>(list, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<List<fn_sum_course>>(list, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 
 
-		return new ResponseEntity<List<Tipo_curso>>(list, HttpStatus.OK);
+		return new ResponseEntity<List<fn_sum_course>>(list, HttpStatus.OK);
 		
 	}
 
