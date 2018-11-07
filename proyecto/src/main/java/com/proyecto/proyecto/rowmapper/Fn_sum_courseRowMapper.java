@@ -16,6 +16,7 @@ public class Fn_sum_courseRowMapper implements RowMapper<fn_sum_course>{
 		tabla.setId_programacion(rs.getInt("id_programacion"));
 		tabla.setDocente(rs.getString("docente"));
 		tabla.setCurso(rs.getString("curso"));
+		tabla.setCiclo(rs.getInt("ciclo"));
 		tabla.setPlan(rs.getString("plan"));
 		tabla.setMatriculados(rs.getInt("matriculados"));
 		tabla.setDia(rs.getString("dia"));

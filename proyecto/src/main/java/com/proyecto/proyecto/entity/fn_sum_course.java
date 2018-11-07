@@ -5,6 +5,7 @@ public class fn_sum_course {
 	private int id_programacion;
 	private String docente;
 	private String curso;
+	private int ciclo;
 	private String plan;
 	private int matriculados;
 	private String dia;
@@ -79,6 +80,13 @@ public class fn_sum_course {
 	public void setSiglas(String siglas) {
 		this.siglas = siglas;
 	}
+	public int getCiclo() {
+		return ciclo;
+	}
+	public void setCiclo(int ciclo) {
+		this.ciclo = ciclo;
+	}
+	
 	
 
 }
