@@ -43,7 +43,7 @@ public class UsuarioController {
 			}
 		} catch (Exception e) {
 
-			return new ResponseEntity<List<Usuario>>(list, HttpStatus.ACCEPTED);
+			return new ResponseEntity<List<Usuario>>(list, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
 		logger.info("usuario xd: " +list.get(0).toString());
@@ -70,7 +70,7 @@ public class UsuarioController {
 		} catch (Exception e) {
 			
 			System.out.println("error de usuario: "+ e.getMessage());
-			return new ResponseEntity<Usuario>(user, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Usuario>(user, HttpStatus.ACCEPTED);
 		}
 
 		
