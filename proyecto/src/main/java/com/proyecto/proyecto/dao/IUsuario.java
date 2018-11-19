@@ -8,7 +8,7 @@ public interface IUsuario {
 	
 	List<Usuario> listaUsuarios();
 	
-	Usuario getUsuarioByUsername(String username);
+	Usuario getUsuarioByUsername(String username,String password);
 	
 
 }

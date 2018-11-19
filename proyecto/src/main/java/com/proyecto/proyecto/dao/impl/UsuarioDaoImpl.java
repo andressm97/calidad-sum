@@ -32,13 +32,13 @@ public class UsuarioDaoImpl implements IUsuario{
 	}
 
 	@Override
-	public Usuario getUsuarioByUsername(String username) {
+	public Usuario getUsuarioByUsername(String username,String password) {
 		
-		String sql="select * from fn_listar() where username=CONCAT(?,'@unmsm.edu.pe')";
+		String sql="select * from fn_listar() where username=CONCAT(?,'@unmsm.edu.pe') and password=?";
 		
 		RowMapper<Usuario>rowMapper=new BeanPropertyRowMapper<Usuario>(Usuario.class);		
 
-		Usuario usuario=JdbcTemplate.queryForObject(sql,rowMapper,username);
+		Usuario usuario=JdbcTemplate.queryForObject(sql,rowMapper,username,password);
 		
 		return usuario;
 	}

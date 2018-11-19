@@ -19,9 +19,9 @@ public class UsuarioService {
 		return daoUsuario.listaUsuarios();
 	}
 	
-	public Usuario getUsuarioByUsername(String username) {
+	public Usuario getUsuarioByUsername(String username,String password) {
 		
-		Usuario usuario=daoUsuario.getUsuarioByUsername(username);
+		Usuario usuario=daoUsuario.getUsuarioByUsername(username,password);
 		return usuario;
 	
 	}

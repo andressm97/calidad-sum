@@ -52,13 +52,14 @@ public class UsuarioController {
 		
 	}
 	
-	@RequestMapping(value="/{usuario}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Usuario> getAlumnoByUsername(@PathVariable("usuario") String usuario){
-		System.out.println("usuario :" +usuario);
+	@RequestMapping(value="/{usuario}/{password}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Usuario> getAlumnoByUsername(@PathVariable("usuario") String usuario,@PathVariable("password") String password){
+		System.out.println("usuario :" +usuario +"password : "+password);
+		
 		Usuario user = null;
 		
 		try {
-			user = service.getUsuarioByUsername(usuario);
+			user = service.getUsuarioByUsername(usuario,password);
 			
 			//logger.info("usuario : " +user.toString());
 			if (user == null) {
